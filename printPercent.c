@@ -4,8 +4,8 @@
  * printPercent - prints the char "%".
  * Return: 1(amount of char printed).
  */
-int printPercent(void)
+int printPercent_(__attribute__((unused)) va_list args)
 {
-	_putchar("%");
+	_putchar(37);
 	return (1);
 }

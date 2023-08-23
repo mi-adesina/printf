@@ -8,7 +8,7 @@
 int printInteger(va_list args)
 {
 	int n = va_arg(args, int);
-	int i = 0;
+	int i = 0, num, exp, digit;
 
 	if (n < 0)
 	{
@@ -23,8 +23,8 @@ int printInteger(va_list args)
 		return (1);
 	}
 
-	int num = n;
-	int exp = 1;
+	num = n;
+	exp = 1;
 
 	while (num > 0)
 	{
@@ -37,7 +37,7 @@ int printInteger(va_list args)
 	while (exp > 1)
 	{
 		exp /= 10;
-		int digit = num / exp;
+		digit = num / exp;
 
 		_putchar('0' + digit);
 		num %= exp;

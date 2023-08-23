@@ -10,14 +10,14 @@ int printDecimal(va_list args)
 	int number = va_arg(args, int);
 	int currentDigit, lastDigit = number % 10;
 	int printedDigitsCount = 1;
-	int exponent = 1;
+	int exponent = 1, remainingNumber;
 
 	number = number / 10;
-	int remainingNumber = number;
+	remainingNumber = number;
 
 	if (lastDigit < 0)
 	{
-		printChar('-');
+		_putchar('-');
 		remainingNumber = -remainingNumber;
 		number = -number;
 		lastDigit = -lastDigit;
@@ -37,14 +37,14 @@ int printDecimal(va_list args)
 		while (exponent > 0)
 		{
 			currentDigit = remainingNumber / exponent;
-			printChar(currentDigit + '0');
+			_putchar(currentDigit + '0');
 			remainingNumber = remainingNumber - (currentDigit * exponent);
 			exponent = exponent / 10;
 			printedDigitsCount++;
 		}
 	}
 
-	printChar(lastDigit + '0');
+	_putchar(lastDigit + '0');
 
 	return (printedDigitsCount);
 }
