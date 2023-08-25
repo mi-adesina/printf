@@ -7,10 +7,16 @@
 #include <limits.h>
 #include <unistd.h>
 
-typedef struct
+
+/**
+ * struct format - map the format specifiers to printf.
+ * @id: char pointer for the format specifier.
+ * @handler: function pointer for the format specifier.
+ */
+typedef struct format
 {
-    const char *id;
-    int (*handler)(va_list);
+	const char *id;
+	int (*handler)(va_list);
 } convert_match;
 
 int _putchar(char c);
@@ -22,4 +28,4 @@ int printPercent_(va_list args);
 int printInteger(va_list args);
 int printDecimal(va_list args);
 
-#endif 
+#endif
